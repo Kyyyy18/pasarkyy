@@ -1,0 +1,106 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #92C7CF;
+    --secondary-color: #AAD7D9;
+    --light-bg: #FBF9F1;
+    --neutral-color: #E5E1DA;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Neon Title */
+.neon-title, .section-title {
+    all: unset;
+}
+
+/* Neon Button */
+.btn-neon {
+    all: unset;
+}
+
+/* Neon Card */
+.neon-card {
+    all: unset;
+}
+
+/* Neon Input Focus */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color, #92C7CF, 0.1);
+    outline: none;
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --primary-color: #00fff7;
+    --secondary-color: #0e1a2b;
+    --accent-color: #F7DB6A;
+    --light-bg: #181818;
+    --neutral-color: #222c36;
+    --text-dark: #f7f7f7;
+    --text-light: #b2b2b2;
+    --white: #222c36;
+    --shadow: 0 4px 16px rgba(0,255,247,0.08);
+    --shadow-hover: 0 8px 24px rgba(0,255,247,0.12);
+} 

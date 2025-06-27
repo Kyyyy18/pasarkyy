@@ -1,0 +1,218 @@
+/* Hanya untuk dashboard.php (user) */
+.products {
+    padding: 80px 0;
+    background: var(--light-bg);
+    background-image: url('../kendall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.7); /* overlay agar teks tetap terbaca */
+    z-index: 0;
+}
+
+.products > .container, .products .products-grid, .products .section-title, .products .price-filters {
+    position: relative;
+    z-index: 1;
+}
+
+.price-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: var(--white);
+    border: 2px solid var(--neutral-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-image {
+    background: var(--primary-color);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.product-info p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.price-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.price.available {
+    color: var(--primary-color);
+}
+
+.price.unavailable {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.product-info .lowest-price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-details {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    width: 100%;
+}
+
+.btn-details:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* No Data State */
+.no-data {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-light);
+    grid-column: 1 / -1;
+}
+
+.no-data i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--neutral-color);
+}
+
+.no-data p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Search Results */
+.clear-search {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.clear-search:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-light);
+}
+
+.no-results i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--neutral-color);
+}
+
+.no-results p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.last-update {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.last-update small {
+    font-style: italic;
+}
+
+/* Responsive Products */
+@media (max-width: 992px) {
+    .price-filters {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 200px;
+    }
+} 
